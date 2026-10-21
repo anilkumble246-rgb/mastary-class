@@ -37,10 +37,10 @@
             100+ Master Prompts
           </a>
           <span class="text-slate-300">•</span>
-          <a href="#our-project" class="text-sm font-bold text-slate-700 hover:text-emerald-600 transition-colors flex items-center gap-1.5">
+          <button onclick="scrollToProjectAndPlay()" class="text-sm font-bold text-slate-700 hover:text-emerald-600 transition-colors flex items-center gap-1.5 focus:outline-none">
             <i data-lucide="play-circle" class="w-4 h-4 text-emerald-600"></i>
             Our Project
-          </a>
+          </button>
         </div>
       </nav>
 
@@ -81,7 +81,7 @@
       </h1>
 
       <p class="max-w-3xl mx-auto text-lg sm:text-xl text-slate-600 font-normal leading-relaxed mb-10">
-        Amader toiri project ebong custom master prompt babohar kore AI video o image toirite niye ashun nikhut professional standard.
+        আমাদের তৈরি প্রজেক্ট এবং কাস্টম মাস্টার প্রম্পট ব্যবহার করে এআই ভিডিও ও ইমেজ তৈরিতে নিয়ে আসুন নিখুঁত প্রফেশনাল মান।
       </p>
 
       <!-- Action Buttons -->
@@ -92,11 +92,11 @@
           100+ Master Prompts
         </a>
 
-        <a href="#our-project" 
+        <button onclick="scrollToProjectAndPlay()" 
            class="w-full sm:w-auto px-8 py-4 rounded-full bg-white hover:bg-slate-50 text-emerald-800 font-extrabold text-base border-2 border-emerald-600 shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2">
           <i data-lucide="play" class="w-5 h-5 text-emerald-600 fill-emerald-600"></i>
           Our Project
-        </a>
+        </button>
       </div>
     </div>
   </section>
@@ -118,7 +118,7 @@
           </h2>
 
           <p class="text-emerald-100/90 text-base sm:text-lg max-w-2xl mx-auto mb-8 font-light">
-            Midjourney, Runway Gen-3, Luma Dream Machine, Kling AI ebong Leonardo-er moto top tools-er jonno test kora 100+ powerful prompt-er mega collection.
+            Midjourney, Runway Gen-3, Luma Dream Machine, Kling AI এবং Leonardo-এর মতো শীর্ষস্থানীয় টুলসের জন্য পরীক্ষিত ১০০+ পাওয়ারফুল প্রম্পটের মেগা কালেকশন।
           </p>
 
           <!-- Prompt Feature List -->
@@ -147,7 +147,7 @@
             <i data-lucide="shopping-cart" class="w-6 h-6"></i>
             Order (01846008588)
           </a>
-          <p class="text-xs text-emerald-200/70 mt-3">Order button-e click korlei direct WhatsApp-e kotha bole nite parben</p>
+          <p class="text-xs text-emerald-200/70 mt-3">অর্ডার বাটনে ক্লিক করলেই সরাসরি হোয়াটসঅ্যাপে কথা বলে নিতে পারবেন</p>
         </div>
       </div>
 
@@ -161,10 +161,10 @@
       <div class="text-center max-w-3xl mx-auto mb-14">
         <span class="text-emerald-700 font-bold uppercase tracking-wider text-xs">Featured Animation Showcase</span>
         <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2 mb-4">
-          Our Project: Mary Celeste (The Mystery Ship)
+          Our Project: মেরি সেলেস্ট (The Mystery Ship)
         </h2>
         <p class="text-slate-600">
-          Amader toiri AI storytelling o visual animation project-er sample niche direct dekhun.
+          আমাদের তৈরি এআই স্টোরিটেলিং ও ভিজ্যুয়াল অ্যানিমেশন প্রজেক্টের নমুনা নিচে সরাসরি দেখুন।
         </p>
       </div>
 
@@ -174,7 +174,7 @@
           
           <video id="projectVideo" class="w-full h-full object-cover" controls playsinline preload="metadata">
             <source src="project-video.mp4" type="video/mp4">
-            Apnar browser video support korche na.
+            আপনার ব্রাউজার ভিডিওটি সাপোর্ট করছে না।
           </video>
 
         </div>
@@ -198,9 +198,9 @@
   <!-- Footer Quick Action -->
   <footer class="bg-emerald-950 text-white py-12 border-t border-emerald-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h3 class="text-2xl font-bold mb-3">Apnar kaj shuru korte prostut?</h3>
+      <h3 class="text-2xl font-bold mb-3">আপনার কাজ শুরু করতে প্রস্তুত?</h3>
       <p class="text-emerald-200/80 max-w-md mx-auto text-sm mb-6">
-        Jekono custom project, video animation ba master prompt-er jonno aj-i jogajog korun.
+        যেকোনো কাস্টম প্রজেক্ট, ভিডিও অ্যানিমেশন অথবা মাস্টার প্রম্পটের জন্য আজই যোগাযোগ করুন।
       </p>
 
       <a href="https://wa.me/8801846008588?text=Hello%20Mastary%20Class!%20I%20want%20to%20place%20an%20order." 
@@ -218,6 +218,27 @@
 
   <script>
     lucide.createIcons();
+
+    // Function to scroll smoothly to video and autoplay
+    function scrollToProjectAndPlay() {
+      const section = document.getElementById('our-project');
+      const video = document.getElementById('projectVideo');
+
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+
+      if (video) {
+        video.currentTime = 0;
+        // User interaction allows playing with sound
+        const playPromise = video.play();
+        if (playPromise !== undefined) {
+          playPromise.catch(error => {
+            console.log("Autoplay was prevented:", error);
+          });
+        }
+      }
+    }
   </script>
 </body>
 </html>
